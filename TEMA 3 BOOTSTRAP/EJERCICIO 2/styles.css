@@ -1,0 +1,7 @@
+.card {
+    width: 25vw;
+}
+
+img:hover {
+    opacity: 0.4;
+}
