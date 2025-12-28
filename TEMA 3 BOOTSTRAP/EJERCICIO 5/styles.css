@@ -1,0 +1,38 @@
+body {
+  background: #ffc244;
+}
+
+img {
+  width: 400px;
+  height: 400px;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+.span-madrid {
+  color: #00a082;
+}
+
+.card {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  overflow: hidden; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card > img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
