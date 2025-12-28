@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error <%= codigo %> - Intranet</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <%- include('navbar') %>
+
+    <!-- Contenido de error -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="text-center">
+                    <!-- Icono de error -->
+                    <div class="mb-4">
+                        <% if (codigo===404) { %>
+                            <span style="font-size: 8rem;">🔍</span>
+                            <% } else { %>
+                                <span style="font-size: 8rem;">⚠️</span>
+                                <% } %>
+                    </div>
+
+                    <!-- Código de error -->
+                    <h1 class="display-1 fw-bold text-danger mb-3">
+                        <%= codigo %>
+                    </h1>
+
+                    <!-- Mensaje -->
+                    <h2 class="h3 mb-4 text-dark">
+                        <%= error %>
+                    </h2>
+
+                    <!-- Botones de acción -->
+                    <div class="d-grid gap-2 d-md-block">
+                        <a href="/usuarios" class="btn btn-primary btn-lg">
+                            🏠 Volver a Usuarios
+                        </a>
+                        <a href="/registro" class="btn btn-outline-primary btn-lg">
+                            ✍️ Registrarse
+                        </a>
+                    </div>
+
+                    <% if (codigo===404) { %>
+                        <div class="mt-5">
+                            <p class="text-muted">
+                                <small>
+                                    La página que buscas no existe o ha sido movida.
+                                </small>
+                            </p>
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white py-4 mt-5 shadow-sm">
+        <div class="container text-center text-muted">
+            <p class="mb-0">© 2025 Intranet Empresa | Sistema de Registro de Usuarios</p>
+        </div>
+    </footer>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

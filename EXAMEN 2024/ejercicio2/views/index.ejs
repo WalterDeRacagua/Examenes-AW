@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios externos</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="bg-light">
+    <div class="container p-3 mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>Agenda de usuarios externos</h1>
+            <button class="btn btn-primary" onclick="abrirModalNuevo()">Añadir usuario</button>
+        </div>
+        <div class="row" id="contenedor-cards"></div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="usuarioModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- Le ponemos el id porque cambiará en función de si estamos creando o modificando un usuario -->
+                    <div class="modal-title" id="tituloModal"> Nuevo Usuario</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formUsuario">
+                        <input type="hidden" id="indice">
+                        <div class="row">
+                            <div class="col-6 mb-2">
+                                <input type="text" class="form-control" id="id" placeholder="Identificador" required>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 mb-2">
+                                <input type="text" class="form-control" id="casa" placeholder="Teléfono casa">
+                            </div>
+                            <div class="col-6 mb-2">
+                                <input type="text" class="form-control" id="movil" placeholder="Teléfono movil">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-2">
+                                <input type="text" class="form-control" id="oficina" placeholder="Teléfono oficina">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Guardar</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary text-white" data-bs-dismiss="modal"> Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/usuarios.js"></script>
+</body>
+
+</html>

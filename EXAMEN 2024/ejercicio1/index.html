@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="d-flex flex-column">
+            <!-- Titulo de la página -->
+            <section>
+                <div class="d-flex align-items-center justify-content-between p-3 page-title">
+                    <img src="./images/88888H.JPG" alt="Logo de la Universidad Complutense de Madrid"
+                        class="d-inline-block rounded-circle circular">
+                    <h1 class="text-white text-align-center"> Ejercicio 1</h1>
+                    <button class="btn btn-primary" aria-label="Abrir menú configuracion" role="button"
+                        data-bs-toggle="modal" data-bs-target="#dialogoConfiguracion"> Configurar página</button>
+                </div>
+            </section>
+            <!-- Barra de navegación -->
+            <nav class="navbar navbar-expand navbar-light barra-navegacion bg-gray ">
+                <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+                    <ul class="navbar-nav gap-3 p-3 ">
+                        <li class="nav-item">
+                            <a href="#section1" class="nav-link enlace">
+                                Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#section1" class="nav-link enlace">
+                                Acerca de
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#section2" class="nav-link enlace">
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="d-flex flex-column justify-content-center gap-3 p-3">
+            <section class="section p-3" id="section1">
+                <h2>Seccion 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In debitis, provident tempora nulla natus
+                    magni magnam vero mollitia nam dignissimos fugiat corporis, iure sit odit id exercitationem,
+                    pariatur perspiciatis quidem! Repellat ex sequi suscipit veniam sapiente voluptatem necessitatibus
+                    quis quidem. Eaque veniam reprehenderit dolore fugit enim incidunt recusandae consectetur harum
+                    nihil deserunt sunt quis tempora, tenetur magnam numquam ipsa architecto cumque obcaecati voluptate
+                    ullam praesentium natus? Officia odit expedita laborum at ut! Dolores eum earum doloremque, saepe
+                    dolorum optio libero non molestiae quae repudiandae recusandae, animi enim et odit voluptatum
+                    explicabo quam deleniti! Sint doloremque repellat quibusdam blanditiis iusto reiciendis.</p>
+            </section>
+            <section class="section p-3" id="section2">
+                <h2>Seccion 2</h2>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. In debitis, provident tempora nulla natus
+                    magni magnam vero mollitia nam dignissimos fugiat corporis, iure sit odit id exercitationem,
+                    pariatur perspiciatis quidem! Repellat ex sequi suscipit veniam sapiente voluptatem necessitatibus
+                    quis quidem. Eaque veniam reprehenderit dolore fugit enim incidunt recusandae consectetur harum
+                    nihil deserunt sunt quis tempora, tenetur magnam numquam ipsa architecto cumque obcaecati voluptate
+                    ullam praesentium natus? Officia odit expedita laborum at ut! Dolores eum earum doloremque, saepe
+                    dolorum optio libero non molestiae quae repudiandae recusandae, animi enim et odit voluptatum
+                    explicabo quam deleniti! Sint doloremque repellat quibusdam blanditiis iusto reiciendis</p>
+            </section>
+        </div>
+    </main>
+    <footer class="footer mt-2 py-2 text-start bg-dark">
+        <ul class="gap-3 p-3 text-white">
+            <li class="footer-item">
+                Inicio
+            </li>
+            <li class="footer-item">
+                Acerca de
+            </li>
+            <li class="footer-item">
+                Contacto
+            </li>
+        </ul>
+    </footer>
+
+    <div class="modal fade" id="dialogoConfiguracion">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Configuración</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        title="Cerrar el modal de configuración"> </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <label for="fontSizeTitle" class="form-label">Tamaño de fuente del título</label>
+                            <select name="fontSizeTitle" id="fontSizeTitle" class="form-select"
+                                aria-label="Selecciona un tamaño para el título">
+                                <option value="">Por defecto</option>
+                                <option value="1">Pequeño</option>
+                                <option value="2">Mediano</option>
+                                <option value="3">Grande</option>
+                            </select>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label for="fontSizeText" class="form-label">Tamaño de fuente del texto</label>
+                            <select name="fontSizeText" id="fontSizeText" class="form-select"
+                                aria-label="Selecciona un tamaño">
+                                <option value="">Por defecto</option>
+                                <option value="1">Pequeño</option>
+                                <option value="2">Mediano</option>
+                                <option value="3">Grande</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <label for="fontColors1" class="form-label">Colores de fuentes</label>
+                            <select name="fontColors1" id="fontColors1" class="form-select"
+                                aria-label="Selecciona un color">
+                                <option value="">Por defecto</option>
+                                <option value="1">Gris</option>
+                                <option value="2">Negro</option>
+                                <option value="3">Blanco</option>
+                            </select>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label for="fontColors2" class="form-label">Colores de fuentes</label>
+                            <select name="fontColors2" id="fontColors2" class="form-select"
+                                aria-label="Selecciona un color">
+                                <option value="">Por defecto</option>
+                                <option value="1">Gris</option>
+                                <option value="2">Negro</option>
+                                <option value="3">Blanco</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <label for="colorSecciones" class="form-label">Colores de secciones</label>
+                            <select name="colorSecciones" id="colorSecciones" class="form-select"
+                                aria-label="Selecciona un color">
+                                <option value="">Por defecto</option>
+                                <option value="1">Gris</option>
+                                <option value="2">Negro</option>
+                                <option value="3">Blanco</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <label for="colorSeccion1" class="form-label">Colores de sección 1</label>
+                            <select name="colorSeccion1" id="colorSeccion1" class="form-select"
+                                aria-label="Selecciona un color">
+                                <option value="">Por defecto</option>
+                                <option value="1">Gris</option>
+                                <option value="2">Negro</option>
+                                <option value="3">Blanco</option>
+                            </select>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label for="colorSeccion2" class="form-label">Colores de sección 2</label>
+                            <select name="colorSeccion2" id="colorSeccion2" class="form-select"
+                                aria-label="Selecciona un color">
+                                <option value="">Por defecto</option>
+                                <option value="1">Gris</option>
+                                <option value="2">Negro</option>
+                                <option value="3">Blanco</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <label for="colorVisitados" class="form-label">Colores enlaces visitados</label>
+                            <select name="colorVisitados" id="colorVisitados" class="form-select"
+                                aria-label="Selecciona un color">
+                                <option value="">Por defecto</option>
+                                <option value="1">Gris</option>
+                                <option value="2">Negro</option>
+                                <option value="3">Blanco</option>
+                            </select>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label for="colorNoVisitados" class="form-label">Colores enlaces no visitados</label>
+                            <select name="colorNoVisitados" id="colorNoVisitados" class="form-select"
+                                aria-label="Selecciona un color">
+                                <option value="">Por defecto</option>
+                                <option value="1">Gris</option>
+                                <option value="2">Negro</option>
+                                <option value="3">Blanco</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3 align-items-center justify-content-center">
+                            <label for="subrayadoEnlaces" class="form-label">Subrayado enlaces</label>
+                            <input type="checkbox" title="Subrayado en los enlaces" class="form-check-input ms-2" id="subrayadoEnlaces">
+                        </div>
+                   
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="aplicarConfiguracion">Aplicar
+                        configuracion</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                        title="Cerrar el modal de configuración"> Cerrar </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../public/js/bootstrap.min.js"></script>
+<script src="./script.js"></script>
+</html>

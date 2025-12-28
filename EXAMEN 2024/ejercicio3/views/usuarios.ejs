@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios de la aplicacion</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+    <%- include('navbar') %>
+        <main class="container py-5">
+            <!-- Cabecera -->
+            <div class="text-center mb-5">
+                <h1 class="fw-bold text-primary mb-3">
+                    Usuarios registrados
+                </h1>
+                <p class="lead text-muted">
+                    Total usuarios: <span class="badge bg-primary fs-5">
+                        <%= usuarios.length %>
+                    </span>
+                </p>
+                <a href="/registro" class="btn btn-primary btn-md mt-3">
+                    Registrar nuevo usuario
+                </a>
+            </div>
+
+            <!-- Grid de usuarios -->
+            <div class="row" id="contenedor-usuarios">
+                <!-- Contenido se rellena con Ajax -->
+            </div>
+        </main>
+        <footer class="bg-white py-4 mt-5 shadow-sm">
+            <div class="container text-center text-muted">
+                <p class="mb-0"> 2025 Intranet | Sistema de registro de usuarios </p>
+            </div>
+        </footer>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/usuarios.js"></script>
+</body>
+
+</html>
