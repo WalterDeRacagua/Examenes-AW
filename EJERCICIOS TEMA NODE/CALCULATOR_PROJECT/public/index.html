@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card p-5 shadow" style="max-width:480px; width:100%;">
+            <h3 class="text-center mb-3">
+                Calculadora de Sergio
+            </h3>
+            <form action="/calculate" method="post" id="calculatorForm">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <input type="number" name="num1" id="num1" placeholder="Número 1" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <input type="number" name="num2" id="num2" placeholder="Número 2" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <select name="operation" id="operation" class="form-select" title="Selecciona una operación">
+                            <option value="sum">+</option>
+                            <option value="subtract">-</option>
+                            <option value="multiply">*</option>
+                            <option value="divide">/</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Calcular</button>
+            </form>
+            
+            <div id="resultado" class="alert alert-info mt-3 text-center" style="display: none;"></div>
+        </div>
+    </div>
+    <script src="ajaxCalculadora.js"></script>
+</body>
+
+</html>
