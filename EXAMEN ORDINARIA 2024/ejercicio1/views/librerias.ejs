@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Librerias</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container d-flex flex-column p-3">
+        <h1 class="text-center p-3"> Goma Books - Librería </h1>
+        <div class="d-flex justify-content-center mb-4">
+            <button class="btn btn-primary button-conf" type="button" data-bs-toggle="modal"
+                data-bs-target="#modalConfiguracion"> Configurar</button>
+        </div>
+        <div class="card-container row  justify-content-center gap-3 p-3" id="galeriaLibros">
+            <!-- Aquí se cargaran por Ajax todos y cada uno de los libros en cards.  -->
+        </div>
+    </div>
+
+    <!-- Modal de configuración -->
+    <div class="modal fade" id="modalConfiguracion">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Personalizar Galería</h5>
+                    <button type="button" class="btn btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3 mb-2">
+                        <!-- Tamaño de imagen -->
+                        <div class="col-md-6">
+                            <label for="tamanoImagen" class="form-label fw-bold"> Tamaño de imagen </label>
+                            <select name="tamanoImagen" id="tamanoImagen" class="form-select">
+                                <option value="pequeno"> Pequeño</option>
+                                <option value="mediano" selected> Mediano</option>
+                                <option value="grande"> Grande</option>
+                            </select>
+                        </div>
+                        <!-- Tamaño de imagen -->
+                        <div class="col-md-6">
+                            <label for="tamanoTexto" class="form-label fw-bold"> Tamaño de títulos </label>
+                            <select name="tamanoTexto" id="tamanoTexto" class="form-select">
+                                <option value="pequeno"> Pequeño</option>
+                                <option value="mediano" selected> Mediano</option>
+                                <option value="grande"> Grande</option>
+                                <option value="muygrande">Muy grande</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <!-- Color de fondo ~ Galería -->
+                        <div class="col-md-6">
+                            <label for="colorFondo" class="form-label fw-bold"> Color de fondo </label>
+                            <select name="colorFondo" id="colorFondo" class="form-select">
+                                <option value="azul"> Azul </option>
+                                <option value="gris" selected> Gris </option>
+                                <option value="verde"> Verde</option>
+                            </select>
+                        </div>
+                        <!-- Color ~ Títulos  -->
+                        <div class="col-md-6">
+                            <label for="color" class="form-label fw-bold"> Color de títulos </label>
+                            <select name="colorTitulos" id="colorTitulos" class="form-select">
+                                <option value="blanco"> Blanco </option>
+                                <option value="negro" selected> Negro </option>
+                                <option value="rojo"> Rojo</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer g-3">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-primary me-3" id="guardarPreferencias"> Guardar </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Cerrar </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Definiciones de javascript -->
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ajaxLibros.js"></script>
+</body>
+
+</html>

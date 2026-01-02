@@ -1,0 +1,69 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+h1 {
+  color: #2e7d32;
+}
+a {
+  text-decoration: none;
+  color: #1b5e20;
+}
+
+/* ======== Tamaño de Imagenes ======== */
+.img-pequeno {
+  height: 150px;
+  object-fit: cover;
+}
+
+.img-mediano {
+  height: 250px;
+  object-fit: cover;
+}
+
+.img-grande {
+  height: 350px;
+  object-fit: cover;
+}
+
+/* ======== Tamaño de texto ======== */
+.texto-pequeno {
+  font-size: 14px;
+}
+
+.texto-mediano {
+  font-size: 16px;
+}
+.texto-grande {
+  font-size: 18px;
+}
+.texto-muygrande {
+  font-size: 20px;
+}
+
+/* ======== Colores de fondo ======== */
+.fondo-azul {
+  background-color: blue;
+}
+
+.fondo-gris {
+  background-color: gray;
+}
+
+.fondo-verde {
+  background-color: green;
+}
+
+/* ======== Colores de título "color-blanco", "color-negro", "color-rojo" ======== */
+.color-blanco{
+    color: white;
+}
+
+.color-negro{
+    color: black;
+}
+
+.color-rojo{
+    color: red;
+}
