@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="bg-light">
+    <div class="container p-5">
+        <div class="d-flex flex-column align-items-center gap-3">
+            <h1 class="text-center"> Usuarios registrados en la aplicación</h1>
+            <a href="/register" class="button-register btn btn-primary "> Registrar nuevo usuario </a>
+        </div>
+        <div class="cards-usuarios d-flex flex-row justify-content-center p-3 gap-3" id="cardsUsuarios">
+            <!-- Aquí dentro por Ajax será dónde cargaremos todos los usuarios de la aplicación -->
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ajaxUsuarios.js"></script>
+</body>
+
+</html>

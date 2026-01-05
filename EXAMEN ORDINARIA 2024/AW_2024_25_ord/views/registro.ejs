@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuarios</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="text-center text-primary mb-5">Registrar un nuevo usuario</h1>
+
+        <!-- IMPORTANTE: justify-content-center para centrar -->
+        <div class="row justify-content-center">
+            <!-- col-lg-7 para más ancho en desktop -->
+            <div class="col-12 col-md-10 col-lg-7 col-xl-6">
+                <div class="card shadow">
+                    <div class="card-body p-5">
+                        <% if (error) { %>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Error:</strong>
+                                <%= error %>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                            <% } %>
+                                <!-- Importante el multipart/form-data para poder subir la foto. -->
+                                <form action="/register" method="POST" enctype="multipart/form-data">
+                                    <!-- Nombre y Apellidos -->
+                                    <div class="row mb-3">
+                                        <div class="col-6">
+                                            <label for="nombre" class="form-label fw-bold">
+                                                Nombre <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" name="nombre" id="nombre"
+                                                class="form-control form-control-lg" placeholder="Jorge" required>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="apellidos" class="form-label fw-bold">
+                                                Apellidos <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" name="apellidos" id="apellidos"
+                                                class="form-control form-control-lg" placeholder="Nitales Biano"
+                                                required>
+                                        </div>
+                                    </div>
+
+                                    <!-- Correo y Contraseña -->
+                                    <div class="row mb-3">
+                                        <div class="col-6">
+                                            <label for="correo" class="form-label fw-bold">
+                                                Correo <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="email" name="correo" id="correo"
+                                                class="form-control form-control-lg" pattern="^[A-Za-z0-9._]+@ucm\.es$"
+                                                placeholder="usuario@ucm.es"
+                                                title="Debe ser un correo con dominio @ucm.es" required>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="password" class="form-label fw-bold">
+                                                Contraseña <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="password" name="password" id="password"
+                                                class="form-control form-control-lg"
+                                                pattern="^(?=.*\d)(?=.*[A-Z]).{6,}$" placeholder="Abc123"
+                                                title="Mínimo 6 caracteres, 1 número y 1 mayúscula" required>
+                                        </div>
+                                    </div>
+
+                                    <!-- Foto -->
+                                    <div class="mb-4">
+                                        <label for="foto" class="form-label fw-bold">
+                                            Foto de perfil (opcional)
+                                        </label>
+                                        <input type="file" name="foto" id="foto" class="form-control form-control-lg"
+                                            accept="image/png,image/jpg,image/jpeg">
+                                        <div class="form-text">
+                                            Solo JPG, JPEG y PNG. Máximo 5MB. Si no se sube imagen, se usará una por
+                                            defecto.
+                                        </div>
+                                    </div>
+
+                                    <!-- Botones -->
+                                    <div class="d-grid gap-3">
+                                        <button type="submit" class="btn btn-primary btn-lg">
+                                            Registrar Usuario
+                                        </button>
+                                        <a href="/users" class="btn btn-outline-secondary btn-lg">
+                                            Ver Usuarios Registrados
+                                        </a>
+                                    </div>
+                                </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

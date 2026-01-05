@@ -1,0 +1,39 @@
+var usuarios = [
+  {
+    nombre: "Aitor",
+    apellidos: "Tilla Patata",
+    correo: "aitor.tilla@ucm.es",
+    contraseña: "tillapapas",
+    imagen: "aitorTilla.png",
+  },
+  {
+    nombre: "Felipe",
+    apellidos: "Lotas",
+    correo: "felipe.lotas@ucm.es",
+    contraseña: "felipe",
+    imagen: "felipeLotas.png",
+  },
+  {
+    nombre: "Felipe",
+    apellidos: "Luquin",
+    correo: "felipe.luquin@ucm.es",
+    contraseña: "luquin",
+    imagen: "felipeLuquin.png",
+  },
+  {
+    nombre: "Ramón",
+    apellidos: "Aguillo",
+    correo: "ramon.aguillo@ucm.es",
+    contraseña: "aguillo",
+    imagen: "ramonAguillo.png",
+  },
+  {
+    nombre: "Rubén",
+    apellidos: "Tosidad",
+    correo: "ruben.tosidad@ucm.es",
+    contraseña: "tosidad",
+    imagen: "rubenTosidad.png",
+  },
+];
+
+module.exports = usuarios;
