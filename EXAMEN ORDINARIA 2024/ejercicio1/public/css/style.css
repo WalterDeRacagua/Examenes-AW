@@ -11,6 +11,7 @@ a {
   color: #1b5e20;
 }
 
+/* MUY FÁCIL, SE AÑADEN CLASES DESDE JS QUE SE VAN ELIMINANDO Y AÑADIENDO. AL PRINCIPIO HAY UNAS CUALIDADES YA CARGADAS */
 /* ======== Tamaño de Imagenes ======== */
 .img-pequeno {
   height: 150px;

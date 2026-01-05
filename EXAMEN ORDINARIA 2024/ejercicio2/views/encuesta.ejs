@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Encuesta</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container p-3">
+        <h1 class="text-center"> Encuesta</h1>
+        <div class="card m-3">
+            <div class="card-body p-4">
+                <form action="/encuesta" method="post" id="formEncuesta">
+                    <div id="contenedorPreguntas">
+                        <!-- Aquí es donde se van a cargar dinámicamente las preguntas de las encuestas -->
+                    </div>
+                    <div class="d-flex justify-content-center gap-3 mt-4">
+                        <button type="submit" class="btn btn-primary btn-md"> Enviar </button>
+                        <a href="/resultados" class="btn btn-outline-secondary" role="button"> Ver resultados</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+ 
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ajaxPreguntas.js"></script>
+</body>
+
+</html>

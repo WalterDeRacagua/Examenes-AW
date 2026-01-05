@@ -1,6 +1,1 @@
-
-const express = require('express');
-const router = express.Router();
-
-
-module.exports = router;
+// No utilizo (podría para las rutas de encuestas y resultados)

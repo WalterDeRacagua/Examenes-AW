@@ -5,10 +5,7 @@ const DEFAULTS = {
   colorTitulos: "negro",
 };
 
-let modal;
-
 document.addEventListener("DOMContentLoaded", function () {
-  modal = new bootstrap.Modal(document.getElementById("modalConfiguracion"));
   cargarLibros();
   cargarPreferencias();
   configurarEventos();
@@ -22,7 +19,7 @@ function cargarLibros() {
     if (xhr.status === 200) {
       const libros = JSON.parse(xhr.responseText);
       pintarLibros(libros);
-      aplicarPreferencias(); // Aplicar después de pintar
+      aplicarPreferencias(); // Aplicar después de pintar --> de esta forma pilla lo que hay en localStorage y lo aplica directamente.
     }
   };
 
@@ -53,15 +50,53 @@ function pintarLibros(libros) {
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card h-100 libro-card">
           <img src="/img/${libro.imagen}" 
-               class="card-img-top libro-imagen" 
-               alt="${libro.titulo}"
-               onerror="this.src='/img/default.jpg'">
+              class="card-img-top libro-imagen" 
+              alt="${libro.titulo}"
+              onerror="this.src='/img/default.jpg'">
           <div class="card-body">
             <h5 class="card-title libro-titulo">${libro.titulo}</h5>
           </div>
         </div>
       </div>
     `;
+  });
+}
+
+function aplicarPreferencias() {
+  const tamanoImagen = document.getElementById("tamanoImagen").value;
+  const tamanoTexto = document.getElementById("tamanoTexto").value;
+  const colorFondo = document.getElementById("colorFondo").value;
+  const colorTitulos = document.getElementById("colorTitulos").value;
+
+  const galeria = document.getElementById("galeriaLibros");
+
+  // Aplicar color de fondo
+  galeria.classList.remove("fondo-azul", "fondo-gris", "fondo-verde");
+  galeria.classList.add(`fondo-${colorFondo}`);
+
+  // Aplicar tamaño de imagen --> Podemos cogerlo bien con la clase o bien con la etiqueta.
+  const imagenes = document.querySelectorAll(".libro-imagen");
+  
+  imagenes.forEach((imagen) => {
+    imagen.classList.remove("img-pequeno", "img-mediano", "img-grande");
+    imagen.classList.add(`img-${tamanoImagen}`);
+  });
+
+  // Aplicar tamaño y color de texto
+  const titulos = document.querySelectorAll(".libro-titulo");
+  titulos.forEach((titulo) => {
+    // Remover clases de tamaño
+    titulo.classList.remove(
+      "texto-pequeno",
+      "texto-mediano",
+      "texto-grande",
+      "texto-muygrande"
+    );
+    titulo.classList.add(`texto-${tamanoTexto}`);
+
+    // Remover clases de color
+    titulo.classList.remove("color-blanco", "color-negro", "color-rojo");
+    titulo.classList.add(`color-${colorTitulos}`);
   });
 }
 
@@ -87,7 +122,6 @@ function configurarEventos() {
     .getElementById("guardarPreferencias")
     .addEventListener("click", function () {
       guardarPreferencias();
-      modal.hide();
     });
 
   // Preview en tiempo real
@@ -116,41 +150,4 @@ function guardarPreferencias() {
   localStorage.setItem("preferenciasLibreria", JSON.stringify(preferencias));
   aplicarPreferencias();
   alert("Preferencias guardadas correctamente!");
-}
-
-function aplicarPreferencias() {
-  const tamanoImagen = document.getElementById("tamanoImagen").value;
-  const tamanoTexto = document.getElementById("tamanoTexto").value;
-  const colorFondo = document.getElementById("colorFondo").value;
-  const colorTitulos = document.getElementById("colorTitulos").value;
-
-  const galeria = document.getElementById("galeriaLibros");
-
-  // Aplicar color de fondo
-  galeria.classList.remove("fondo-azul", "fondo-gris", "fondo-verde");
-  galeria.classList.add(`fondo-${colorFondo}`);
-
-  // Aplicar tamaño de imagen
-  const imagenes = document.querySelectorAll(".libro-imagen");
-  imagenes.forEach((imagen) => {
-    imagen.classList.remove("img-pequeno", "img-mediano", "img-grande");
-    imagen.classList.add(`img-${tamanoImagen}`);
-  });
-
-  // Aplicar tamaño y color de texto
-  const titulos = document.querySelectorAll(".libro-titulo");
-  titulos.forEach((titulo) => {
-    // Remover clases de tamaño
-    titulo.classList.remove(
-      "texto-pequeno",
-      "texto-mediano",
-      "texto-grande",
-      "texto-muygrande"
-    );
-    titulo.classList.add(`texto-${tamanoTexto}`);
-
-    // Remover clases de color
-    titulo.classList.remove("color-blanco", "color-negro", "color-rojo");
-    titulo.classList.add(`color-${colorTitulos}`);
-  });
 }

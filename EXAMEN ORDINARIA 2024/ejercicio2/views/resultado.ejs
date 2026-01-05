@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de las encuestas</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="bg-light">
+    <div class="container py-3">
+        <h1 class="text-center"> Resultados de las encuestas</h1>
+        <div class="card">
+            <div class="card-body">
+                <% encuestas.forEach((pregunta, indexPregunta)=> { %>
+                    <div class="mb-4">
+                        <h4 class="text-secondary mb-3">
+                            <%= indexPregunta +1 %>. <%= pregunta.pregunta %>
+                        </h4>
+
+                        <% pregunta.opciones.forEach((opcion, indexOpcion)=> { %>
+                            <div class="d-flex flex-row gap-3">
+                                <span class="fw-bold">
+                                    <%= indexOpcion %>. <%= opcion.opcion %>:
+                                </span>
+                                <span class="ms-0">
+                                    <%= opcion.votos %> votos.
+                                </span>
+                            </div>
+                            <% }) %>
+                    </div>
+                    <% }) %>
+                    <div class="d-flex justify-content-center">
+                        <a href="/encuesta" class="btn btn-outline-secondary" role="button"> Encuestas </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
