@@ -76,7 +76,7 @@ function aplicarPreferencias() {
 
   // Aplicar tamaño de imagen --> Podemos cogerlo bien con la clase o bien con la etiqueta.
   const imagenes = document.querySelectorAll(".libro-imagen");
-  
+
   imagenes.forEach((imagen) => {
     imagen.classList.remove("img-pequeno", "img-mediano", "img-grande");
     imagen.classList.add(`img-${tamanoImagen}`);
@@ -123,6 +123,11 @@ function configurarEventos() {
     .addEventListener("click", function () {
       guardarPreferencias();
     });
+  document
+    .getElementById("restaurarPreferencias")
+    .addEventListener("click", function () {
+      restaurarPreferencias();
+    });
 
   // Preview en tiempo real
   document
@@ -150,4 +155,12 @@ function guardarPreferencias() {
   localStorage.setItem("preferenciasLibreria", JSON.stringify(preferencias));
   aplicarPreferencias();
   alert("Preferencias guardadas correctamente!");
+}
+
+function restaurarPreferencias() {
+  localStorage.removeItem("preferenciasLibreria");
+    cargarPreferencias();
+  
+  aplicarPreferencias();
+  alert("Preferencias restauradas correctamente!");
 }
