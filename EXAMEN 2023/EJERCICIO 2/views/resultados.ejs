@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container p-3">
+        <div class="card">
+            <div class="card-body p-3">
+                <div class="card-title">
+                    <h1 class="text-center">Resultados de las encuestas</h1>
+                </div>
+
+                <div class="alert alert-info text-center mb-4">
+                    <h3>Total de encuestas realizadas: <%= encuestas.totalEncuestas %></h3>
+                </div>
+
+                <!-- Resultados de Edades -->
+                <div class="mb-4">
+                    <h3 class="fw-bold">Rangos de Edad</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Rango</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Menor de 20</td>
+                                <td><%= encuestas.edades.menor20 %></td>
+                            </tr>
+                            <tr>
+                                <td>De 20 a 30</td>
+                                <td><%= encuestas.edades["20-30"] %></td>
+                            </tr>
+                            <tr>
+                                <td>De 30 a 40</td>
+                                <td><%= encuestas.edades["30-40"] %></td>
+                            </tr>
+                            <tr>
+                                <td>Mayor de 40</td>
+                                <td><%= encuestas.edades.mayor40 %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Resultados de Canales -->
+                <div class="mb-4">
+                    <h3 class="fw-bold">Canal por el que nos conocieron</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Canal</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Buscador de internet</td>
+                                <td><%= encuestas.canales.internet %></td>
+                            </tr>
+                            <tr>
+                                <td>Redes sociales</td>
+                                <td><%= encuestas.canales.rrss %></td>
+                            </tr>
+                            <tr>
+                                <td>Campaña de prensa y TV</td>
+                                <td><%= encuestas.canales.prensa %></td>
+                            </tr>
+                            <tr>
+                                <td>Amigos</td>
+                                <td><%= encuestas.canales.amigos %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Resultados de Residencia -->
+                <div class="mb-4">
+                    <h3 class="fw-bold">Lugar de Residencia</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Ubicación</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Madrid</td>
+                                <td><%= encuestas.residencias.madrid %></td>
+                            </tr>
+                            <tr>
+                                <td>Comunidad de Madrid</td>
+                                <td><%= encuestas.residencias.comunidad %></td>
+                            </tr>
+                            <tr>
+                                <td>Resto del territorio</td>
+                                <td><%= encuestas.residencias.territorio %></td>
+                            </tr>
+                            <tr>
+                                <td>Fuera de España</td>
+                                <td><%= encuestas.residencias.fuera %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

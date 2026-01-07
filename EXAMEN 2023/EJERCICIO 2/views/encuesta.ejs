@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container p-3">
+        <div class="card">
+            <div class="card-body p-3">
+                <div class="card-title">
+                    <h1 class="text-center"> Encuestas campaña de Navidad</h1>
+                </div>
+                <%if(error){ %>
+                    <div class="alert alert-danger alert-dismissible justify-content-between show" role="alert">
+                        <strong>Error</strong>: <%= error %>
+                            <button type="button" class="btn btn-close btn-lg" data-bs-dismiss="alert"></button>
+                    </div>
+                    <% } %>
+
+                        <!-- Podría ser de tipo pogetst, pero como va info del tipo de lugar de residencia, por seguridad lo pongo de tipo post-->
+                        <form action="/" method="post">
+                            <div class="row p-3">
+                                <div class="col-12 mb-3">
+                                    <label for="edad" class="form-label fw-bold">Edad:</label>
+                                    <div>
+                                        <input type="radio" name="edad" id="menor20" value="menor20"
+                                            class="form-check-input" required>
+                                        <label for="menor20"> Menor que 20</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="edad" id="20-30" value="20-30"
+                                            class="form-check-input" required>
+                                        <label for="20-30"> De 20 a 30 </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="edad" id="30-40" value="30-40"
+                                            class="form-check-input" required>
+                                        <label for="30-40"> De 30 a 40</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="edad" id="mayor40" value="mayor40"
+                                            class="form-check-input" required>
+                                        <label for="mayor40"> Mayor de 40</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row p-3">
+                                <div class="col-12 mb-3">
+                                    <label for="canal" class="form-label fw-bold">Canal por el que nos has
+                                        conocido:</label>
+                                    <div>
+                                        <input type="radio" name="canal" id="internet" value="internet"
+                                            class="form-check-input" required>
+                                        <label for="internet"> Buscador de internet</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="canal" id="rrss" value="rrss" class="form-check-input"
+                                            required>
+                                        <label for="rrss"> Redes sociales </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="canal" id="prensa" value="canal"
+                                            class="form-check-input" required>
+                                        <label for="prensa"> Campaña de prensa y TV</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="canal" id="amigos" value="amigos"
+                                            class="form-check-input" required>
+                                        <label for="amigos"> Amigos</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row p-3">
+                                <div class="col-12 mb-3">
+                                    <label for="residencia" class="form-label fw-bold">Lugar de residencia:</label>
+                                    <div>
+                                        <input type="radio" name="residencia" id="madrid" value="madrid"
+                                            class="form-check-input" required>
+                                        <label for="madrid"> Madrid </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="residencia" id="comunidad" value="comunidad"
+                                            class="form-check-input" required>
+                                        <label for="comunidad"> Comunidad de Madrid </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="residencia" id="territorio" value="residencia"
+                                            class="form-check-input" required>
+                                        <label for="territorio"> Resto del territorio</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="residencia" id="fuera" value="residencia"
+                                            class="form-check-input" required>
+                                        <label for="fuera"> Fuera de España</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row p-3">
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-primary btn-md">Submit </button>
+                                </div>
+                            </div>
+                        </form>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.css"></script>
+</body>
+
+</html>
