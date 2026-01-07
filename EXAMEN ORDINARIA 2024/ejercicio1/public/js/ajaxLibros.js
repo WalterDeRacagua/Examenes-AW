@@ -159,8 +159,8 @@ function guardarPreferencias() {
 
 function restaurarPreferencias() {
   localStorage.removeItem("preferenciasLibreria");
-    cargarPreferencias();
-  
+  cargarPreferencias();
+
   aplicarPreferencias();
   alert("Preferencias restauradas correctamente!");
 }
