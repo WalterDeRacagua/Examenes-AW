@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container  p-3">
+        <div class="card shadow">
+            <div class="card-body">
+                <div class="card-title">
+                    <h3 class="text-center text-primary">Productos de nuestro negocio</h3>
+                </div>
+                <div class="row g-3 p-3">
+                    <% if(productos) {%>
+                        <% productos.items.forEach(item=> { %>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="card shadow ">
+                                    <div class="card-body product-card">
+                                        <div
+                                            class="card-title d-flex flex-column justify-content-center align-items-center p-3">
+                                            <img src="/img/<%= item.imagen%>" alt="Imagen de nuestro <%= item.nombre%>">
+                                            <h4>
+                                                <%= item.nombre %>
+                                            </h4>
+                                        </div>
+                                        <div class="text-start">
+                                            <h5 class="fw-bold"> Precio: <span class="text-primary">
+                                                    <%= item.precio%>
+                                                </span> </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <%})%>
+                                <% }%>
+                </div>
+                <div class="row g-3 p-3" id="cardContainer">
+                        <!-- Carga por ajax -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ajaxProductos.js"></script>
+</body>
+
+</html>
