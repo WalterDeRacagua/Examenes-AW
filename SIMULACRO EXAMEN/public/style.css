@@ -1,0 +1,17 @@
+.resize-none{
+    resize: none;
+}
+
+.card-servicios{
+    height: 250px;
+}
+
+.card-body{
+    background-color:  rgb(72, 238, 238,0.1);
+}
+
+.card-body-servicios{
+    border: 1px solid rgb(72, 238, 238);
+    background: rgb(0,0,255, 0.1);
+}
+
