@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg py-1" id="navExamen">
+    <div class="container-fluid">
+        <ul class="navbar-nav me-auto justify-content-center mb-2 p-4 gap-5">
+            <li class="nav-item">
+                <a href="/" class="nav-link  display-5">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a href="/" class="nav-link  display-5">Ejercicio 1</a>
+            </li>
+            <li class="nav-item">
+                <a href="/" class="nav-link display-5">Ejercicio 2</a>
+            </li>
+            <li class="nav-item d-flex justify-content-center align-items-center">
+                <button class="btn btn-primary btn-lg" type="button" data-bs-target="#modalAccesibilidad"
+                    data-bs-toggle="modal">Accesibilidad</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="modal fade" id="modalAccesibilidad">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white d-flex flex-row justify-content-between">
+                <h2 class="modal-title">Accesibilidad básica de la aplicación</h2>
+                <button type="button" class="btn btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row p-3">
+                    <div class="col-6">
+                        <label for="colorEncabezado" class="form-label fw-bold"> Color de encabezado</label>
+                        <select name="colorEncabezado" id="colorEncabezado" class="form-control">
+                            <option value="negro">Negro</option>
+                            <option value="blanco">Blanco</option>
+                            <option value="azul">Azul</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="colorNavbar" class="form-label fw-bold"> Color de navbar</label>
+                        <select name="colorNavbar" id="colorNavbar" class="form-control">
+                            <option value="negro">Negro</option>
+                            <option value="blanco">Blanco</option>
+                            <option value="azul">Azul</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col-6">
+                        <label for="colorEnlaces" class="form-label fw-bold"> Color de enlaces</label>
+                        <select name="colorEnlaces" id="colorEnlaces" class="form-control">
+                            <option value="negro">Negro</option>
+                            <option value="blanco">Blanco</option>
+                            <option value="azul">Azul</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="tamTexto" class="form-label fw-bold"> Tamaño texto encabezados</label>
+                        <select name="tamTexto" id="tamTexto" class="form-control">
+                            <option value="pequeno">Pequeño</option>
+                            <option value="mediano">Mediano</option>
+                            <option value="grande">Grande</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex flex-row justify-content-end gap-3">
+                <button class="btn btn-secondary btn-lg" id="restaurarAccesibilidad"> Restaurar</button>
+                <button class="btn btn-primary btn-lg" id="aplicarAccesibilidad"> Aplicar</button>
+            </div>
+        </div>
+    </div>
+</div>
