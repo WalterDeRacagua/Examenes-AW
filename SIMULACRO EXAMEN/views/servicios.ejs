@@ -17,7 +17,19 @@
                     <h1 class="text-center">Servicios almacenados en la aplicación</h1>
                 </div>
                 <div class="row justify-content-center p-3 g-3" id="cardContainer">
-                    <!-- Aquí se cargaran dinámicamente por Ajax todas las cards -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Precio</th>
+                                <th>Imagen</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableContainer">
+                            <!-- Aquí se cargaran dinámicamente por Ajax todas las filas de la tabla -->
+                        </tbody>
+                     </table>
                 </div>
             </div>
         </div>

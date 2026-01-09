@@ -6,6 +6,38 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 
+// La carpeta donde se van a subir las imagenes va a ser esta
+const uploadDir = path.join(__dirname, "public", "uploads");
+
+if(!fs.existsSync(uploadDir)) {
+  // Si no existe lo creamos
+  fs.mkdirSync(uploadDir, {recursive:true});
+}
+
+const storage = multer.diskStorage({
+  destination: function (request, file, cb) {
+    cb(null, uploadDir);
+  },
+  filename: function (request, file, cb){
+    const uniqueName = Date.now() + "-" + file.originalname;
+    cb(null, uniqueName);
+  }
+});
+
+const upload = multer({
+  storage: storage,
+  fileFilter: function (request, file, cb) {
+    // los archivos que permitimos subir
+    if (file.mimetype === "image/jpg" || file.mimetype === "image/jpeg" ||file.mimetype === "image/png") {
+      // Aceptamos el archivo
+      cb(null, true);
+    } else {
+      cb(new Error("No se puede subir otra cosa que no sea una imagen"), false);
+    }
+  },
+  limits: {fileSize: 1024 * 50,}, //50kb
+})
+
 const app = express();
 const PORT = process.env.PORT || 3500;
 
@@ -60,21 +92,25 @@ app.get("/", middlewarePeticiones, function (request, response) {
 app.post(
   "/",
   middlewarePeticiones,
+  upload.single("foto"),
   middlewareVerificacion,
   function (request, response) {
     const { nombre, descripcion, precio } = request.body;
+
+    const foto = request.file ? request.file.filename : null;
 
     let nuevoServicio = {
       nombre: nombre,
       descripcion: descripcion,
       precio: precio,
+      foto: foto,
     };
 
     servicios.push(nuevoServicio);
 
     // No muestro la descripción para evitar problemas por si es demasiado larga
     return response.render("formulario", {
-      respuesta: `Servicio creado --> Nombre ${nuevoServicio.nombre}, precio${nuevoServicio.precio}`,
+      respuesta: `Servicio creado --> Nombre: ${nuevoServicio.nombre}, Precio: ${nuevoServicio.precio}$`,
       error: null,
     });
   }

@@ -25,40 +25,46 @@ function cargarServicios() {
   xhr.send();
 }
 
+
 function pintarServicios(servicios) {
-  const cardContainer = document.getElementById("cardContainer");
-  cardContainer.innerHTML = "";
+  const tableContainer = document.getElementById("tableContainer");
+  tableContainer.innerHTML = "";
 
   //   Si no hay servicios
   if (servicios.length === 0) {
-    cardContainer.innerHTML = `
-     <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card">
-                            <div class="card-body d-flex flex-column justify-content-start">
-                                <div class="card-title">
-                                    <h2 class="text-center">No hay servicios guardados en el servidor</h2>
-                                </div>
-                                <h3 class="fw-bold"> <span class="text-muted"></span> </h3>
-                                <h3 class="fw-bold"> <span class="text-muted"></span> </h3>
-                            </div>
-                        </div>
-                     </div>`;
+    tableContainer.innerHTML = `
+                            <tr>
+                                <td colspan="4">No hay datos de ningun tipo</td>
+                            </tr>
+                        `;
     return;
   }
 
   servicios.forEach(servicio => {
-    cardContainer.innerHTML += `
-     <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card card-servicios">
-                            <div class="card-body d-flex flex-column justify-content-start card-body-servicios">
-                                <div class="card-title">
-                                    <h2 class="text-center">${servicio.nombre}</h2>
-                                </div>
-                                <h3 class="fw-bold">Precio: <span class="text-muted"> ${servicio.precio}</span> </h3>
-                                <h6 class="fw-bold">Descripción <span class="text-muted">${servicio.descripcion}</span> </h6>
-                            </div>
-                        </div>
-                     </div>
-    `
+    if(servicio.foto !== null){
+      tableContainer.innerHTML += `
+                            <tr>
+                                <td>${servicio.nombre}</td>
+                                <td>${servicio.descripcion}</td>
+                                <td>${servicio.precio}</td>
+                                <td>
+                                    <img class="table-img p-3" src="/uploads/${servicio.foto}">
+                                </td>
+                            </tr>
+      `;
+    }
+    else {
+      tableContainer.innerHTML += `
+                            <tr>
+                                <td>${servicio.nombre}</td>
+                                <td>${servicio.descripcion}</td>
+                                <td>${servicio.precio}</td>
+                                <td>
+                                  No hay imagen para este servicio!
+                                </td>
+                            </tr>
+
+      `
+    }
   });
 }
