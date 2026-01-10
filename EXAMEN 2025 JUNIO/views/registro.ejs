@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de vendedores</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="bg-light">
+    <header class="bg-light">
+        <div class="d-flex flex-row justify-content-between">
+            <img src="/img/11111A.JPG" alt="Imagen de ecomarket" class="p-3">
+            <div class="d-flex justify-content-center align-items-center p-3">
+                <h1 class="text-dark" id="encabezado"> Examen extraordinario AW </h1>
+            </div>
+        </div>
+        <%- include('navbar')%>
+    </header>
+    <main class="d-flex flex-column justify-content-center">
+        <div class="card mt-5 ">
+            <div class="card-body">
+                <h1 class="card-title text-center"> Formulario de registro</h1>
+                <% if(error) { %>
+                    <div class="alert alert-danger alert-dismissible fade show d-flex flex-row justify-content-between"
+                        role="alert">
+                        <span class="fw-bold">Error: <p class="text-muted">
+                                <%= error %>
+                            </p></span>
+                        <button class="btn btn-close" type="button" data-bs-dismiss="alert"></button>
+                    </div>
+                    <%}%>
+                        <% if(exito) { %>
+                            <div class="alert alert-info alert-dismissible fade show d-flex flex-row justify-content-between"
+                                role="alert">
+                                <span class="fw-bold">Exito: <p class="text-muted">
+                                        <%= exito%>
+                                    </p></span>
+                                <button class="btn btn-close" type="button" data-bs-dismiss="alert"></button>
+                            </div>
+                            <%}%>
+                                <form action="/autenticacion" method="post">
+                                    <div class="row mb-2 p-5">
+                                        <div class="col-6">
+                                            <label for="nombre" class="form-label fw-bold">Nombre:</label>
+                                            <input type="text" class="form-control" name="nombre" id="nombre">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="correo" class="form-label fw-bold">Correo:</label>
+                                            <input type="email" class="form-control" name="correo" id="correo">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2 p-5">
+                                        <div class="col-6">
+                                            <label for="password1" class="form-label fw-bold">Contraseña:</label>
+                                            <input type="password" class="form-control" name="password1" id="password1">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="password2" class="form-label fw-bold">Repetir
+                                                contraseña:</label>
+                                            <input type="password" class="form-control" name="password2" id="password2">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="d-flex justify-content-center gap-3">
+                                            <button class="btn btn-primary" type="submit">Enviar</button>
+                                            <a href="/autenticacion/login" role="button"
+                                                class="btn btn-outline-secondary btn-lg"> Ir a login</a>
+                                        </div>
+                                    </div>
+                                </form>
+            </div>
+        </div>
+    </main>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/accesibilidad.js"></script>
+</body>
+
+</html>

@@ -1,19 +1,28 @@
 <nav class="navbar navbar-expand-lg py-1" id="navExamen">
     <div class="container-fluid">
         <ul class="navbar-nav me-auto justify-content-center mb-2 p-4 gap-5">
-            <li class="nav-item">
+             <li class="nav-item">
                 <a href="/" class="nav-link  display-5">Inicio</a>
             </li>
             <li class="nav-item">
-                <a href="/" class="nav-link  display-5">Ejercicio 1</a>
+                <a href="/autenticacion" class="nav-link  display-5">Ejercicio 1</a>
             </li>
             <li class="nav-item">
-                <a href="/" class="nav-link display-5">Ejercicio 2</a>
+                <a href="/encuesta" class="nav-link  display-5">Ejercicio 2</a>
+            </li>
+            <li class="nav-item">
+                <a href="/productos" class="nav-link display-5">Ejercicio 3</a>
             </li>
             <li class="nav-item d-flex justify-content-center align-items-center">
                 <button class="btn btn-primary btn-lg" type="button" data-bs-target="#modalAccesibilidad"
                     data-bs-toggle="modal">Accesibilidad</button>
             </li>
+            <% if(usuario) { %>
+                <li class="nav-item d-flex justify-content-center align-items-center">
+                    <a href="/autenticacion/logout" class="btn btn-danger btn-lg" role="button"> Cerrar sesión</a>
+                </li>
+            <% }%>
+
         </ul>
     </div>
 </nav>

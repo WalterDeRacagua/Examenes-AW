@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rdsultados obtenidos</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="bg-light">
+    <header class="bg-light">
+        <div class="d-flex flex-row justify-content-between">
+            <img src="/img/11111A.JPG" alt="Imagen de ecomarket" class="p-3">
+            <div class="d-flex justify-content-center align-items-center p-3">
+                <h1 class="text-dark" id="encabezado"> Examen extraordinario AW </h1>
+            </div>
+        </div>
+        <%- include('navbar')%>
+    </header>
+    <main class="d-flex flex-column justify-content-center">
+        <div class="card mt-5 ">
+            <div class="card-body">
+                <h1 class="card-title text-center"> Resultados </h1>
+                <% if(encuestas){ %>
+                    <form action="/encuesta" method="post">
+                        <div class="d-flex flex-column justify-content-start gap-3 mb-2">
+                            <% encuestas.forEach((encuesta, indicePregunta)=> { %>
+                                <h2 class="text-start fw-bold mb-2">
+                                    <%= indicePregunta + 1%>.
+                                        <%=encuesta.pregunta%>
+                                </h2>
+                                <div class="d-flex flex-column justify-content-start gap-2">
+                                    <% encuesta.opciones.forEach((opcion, indiceOpcion)=>{ %>
+                                        <p>
+                                            <%= indicePregunta + 1 %>.<%= indiceOpcion +1 %>.
+                                                    <strong>
+                                                        <%= opcion.opcion %>:
+                                                    </strong>
+                                                    <%= opcion.votos %>
+                                        </p>
+                                        <% })%>
+                                </div>
+                                <% }) %>
+                        </div>
+                        <div class="d-flex flex-row justify-content-center align-items-center gap-3 p-5">
+                            <a href="/" class="btn btn-secondary btn-lg">Volver a la página principal</a>
+                            <a href="/encuesta" class="btn btn-outline-secondary btn-lg">Repetir encuesta</a>
+                        </div>
+                    </form>
+                    <% } else { %>
+                        <h2 class="text-center"> No hay encuestas disponibles</h2>
+                        <% } %>
+
+
+
+            </div>
+        </div>
+    </main>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/accesibilidad.js"></script>
+</body>
+
+</html>
