@@ -1,0 +1,25 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+h1 {
+    color: #2e7d32;
+}
+a {
+    text-decoration: none;
+    color: #1b5e20;
+}
+
+
+.card-usuarios{
+    height: 320px;
+    background-color: rgba(18, 210, 98, 0.1) !important;
+}
+
+.imagen-card {
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}

@@ -1,0 +1,57 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    padding: 20px;
+}
+
+
+.book-cards {
+    border: 1px solid black !important;
+    height: 400px;
+}
+
+.image-card {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.imagen-pequeno{
+    width: 100px;
+    height: 100px;
+}
+
+.imagen-mediano{
+    width: 150px;
+    height: 150px;
+}
+.imagen-grande{
+    width: 200px;
+    height: 200px;
+}
+
+
+.titulo-pequeno{
+    font-size: 20px;
+}
+
+.titulo-mediano{
+    font-size: 24px;
+}
+.titulo-grande{
+    font-size: 28px;
+}
+
+.fondo-blanco {
+    background: #fff;
+}
+
+.fondo-negro {
+    background: #000;
+}
+
+.fondo-azul {
+    background: #48e;
+}
+
+

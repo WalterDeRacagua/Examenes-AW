@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados Encuesta</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container p-4">
+        <div class="card shadhow p-2">
+            <div class="card-body">
+                <h1 class="card-title text-center p-3">Resultados de las encuestas</h1>
+                <div class="alert-info alert-dismissible fade show d-flex justify-content-between" role="alert">
+                    <p>Total de encuestas enviadas: <%= totalEncuestas%></p>
+                    <button type="button" data-bs-dismiss="alert" class="btn btn-close btn-lg"></button>
+                </div>
+                <% if(encuesta) {%>
+                    <form action="/encuesta" method="post">
+                        <div class="d-flex flex-column justify-content-start align-items-start gap-2">
+                            <% encuesta.forEach((pregunta, indicePregunta)=> {%>
+                                <h2 class="text-start fw-bold">
+                                    <%= indicePregunta+1 %>. <%= pregunta.pregunta %>
+                                </h2>
+                                <% pregunta.opciones.forEach((opcion, indiceOpcion)=> {%>
+                                    <p class="text-start"> 
+                                        <span class="fw-bold"> 
+                                            <%= indicePregunta +1 %>.<%= indiceOpcion +1 %>.
+                                         </span>
+                                         <%= opcion.opcion %>: <span class="text-muted"> <%= opcion.votos %></span>
+                                         </p>
+                                    <% })%>
+                                        <% })%>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-center align-items- p-3">
+                                        <button type="submit" class="btn btn-primary btn-lg"> Enviar
+                                            formulario</button>
+                                    </div>
+                                </form>
+                    <% } else {%>
+                        <h2 class="text-center fw-bold"> No hay preguntas disponibles aun</h2>
+                        <% } %>
+
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

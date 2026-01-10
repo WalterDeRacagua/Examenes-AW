@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Goma books</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container p-4">
+        <div class="card shadow p-3">
+            <div class="card-body">
+                <h1 class="card-title text-center p-3"> Goma books </h1>
+                <div class="d-flex flex-row justify-content-center align-items-center">
+                    <button type="button" class="btn btn-primary btn-lg m-3" data-bs-target="#modalConfiguracion"
+                        data-bs-toggle="modal"> Configuración </button>
+                </div>
+                <div class="row g-3" id="cardContainer">
+                    <!-- Lo cargaré por ajax después. Primero ejs. -->
+                    <% if(libros) {%>
+                        <% libros.forEach(libro=> {%>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="card shadow p-3 book-cards">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h2 class="text-center fw-bold title-card p-3">
+                                                <%= libro.titulo %>
+                                            </h2>
+                                            <div class="d-flex flex-row justify-content-center align-items-center">
+                                                <img src="/img/<%= libro.imagen %>"
+                                                    alt="Imagen del libro <%= libro.titulo %>" class="image-card">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% })%>
+                                <% } else {%>
+                                    <h2 class="text-center"> No hay libros en la base de datos </h2>
+                                    <% }%>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ajaxLibros.js"></script>
+    <script src="/js/preferencias.js"></script>
+</body>
+
+</html>
+
+<div class="modal fade" id="modalConfiguracion">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header d-flex flex-row justify-content-between align-items-center bg-primary">
+                <h2 class="text-white"> Modal de configuración </h2>
+                <button type="button" class="btn btn-close btn-lg btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row mb-2">
+                    <div class="col-6">
+                        <!-- Si esta dentro de un div form-check sería form-check-label  -->
+                        <label class="form-label" for="tamImg"> Tamaño de imágenes: </label>
+                        <select name="tamImg" id="tamImg" class="form-control">
+                            <option value="pequeno">Pequeño</option>
+                            <option value="mediano">Mediano</option>
+                            <option value="grande">Grande</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <!-- Si esta dentro de un div form-check sería form-check-label  -->
+                        <label class="form-label" for="tamTitulos"> Tamaño de títulos: </label>
+                        <select name="tamTitulos" id="tamTitulos" class="form-control">
+                            <option value="pequeno">Pequeño</option>
+                            <option value="mediano" >Mediano</option>
+                            <option value="grande">Grande</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-12">
+                        <!-- Si esta dentro de un div form-check sería form-check-label  -->
+                        <label class="form-label" for="colorFondo"> Color de fondo: </label>
+                        <select name="colorFondo" id="colorFondo" class="form-control">
+                            <option value="blanco">Blanco</option>
+                            <option value="negro">Negro</option>
+                            <option value="azul">Azul</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="d-flex flex-row justify-content-end align-items-center gap-3">
+                    <button type="button" class="btn btn-primary btn-lg" id="botonAplicar"> Aplicar cambios </button>
+                    <button type="button" class="btn btn-outline-primary btn-lg" id="botonRestaurar"> Restaurar cambios
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

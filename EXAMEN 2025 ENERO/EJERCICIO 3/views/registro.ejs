@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Encuesta</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container p-4">
+        <div class="card shadow p-2">
+            <div class="card-body">
+                <h1 class="card-title text-center">Registro de usuarios</h1>
+                <% if(error) {%>
+                    <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-between"
+                        role="alert">
+                        <p class="text-start fw-bold"> Error: <%= error %>
+                        </p>
+                        <button type="button" class="btn btn-close btn-lg" data-bs-dismiss="alert"></button>
+                    </div>
+                    <% }%>
+                        <!-- multipart form data es para poder enviar imágenes -->
+                        <form action="/" method="post" enctype="multipart/form-data">
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="nombre" class="form-label fw-bold">Nombre <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="nombre" id="nombre" required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="apellidos" class="form-label fw-bold">Apellidos <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="apellidos" id="apellidos" required>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="correo" class="form-label fw-bold">Correo <span
+                                            class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" name="correo" id="correo"
+                                        pattern="^[A-Za-z0-9._]+@ucm\.es$"
+                                        title="El correo debe tener el dominio @ucm.es, muy importante" required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="password" class="form-label fw-bold">Contraseña <span
+                                            class="text-danger">*</span></label>
+                                    <input type="password" name="password" id="password" class="form-control"
+                                        pattern="(?=(?:.*\d){1,})(?=(?:.*\[A-Z]){1,}).{6,}$" title="La contraseña debe tener 6 caracteres como mínimo, una mayúscula y un dígito obligatoriamente">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-12">
+                                    <label for="foto" class="form-label fw-bold"> Foto </label>
+                                    <input type="file" class="form-control" name="foto" id="foto" accept="image/jpg, image/jpeg, image/png">
+                                    <div class="form-text">
+                                        La foto es opcional, solo se aceptan archivos jpg, jpeg y png
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row justify-content-center align-items-center p-3 gap-3">
+                                <button type="submit" class="btn btn-primary btn-lg"> Enviar
+                                    formulario</button>
+                                    <a href="/usuarios" role="button" class="btn btn-outline-primary btn-lg"> Ver usuarios</a>
+                            </div>
+                        </form>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
