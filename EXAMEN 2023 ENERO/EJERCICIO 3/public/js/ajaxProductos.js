@@ -59,10 +59,36 @@ function pintarProductos(productos) {
                                 <div class="d-flex flex-column justify-content-start align-items-center p-2 gap-3">
                                     <p>Precio: <span class="fw-bold"> ${producto.precio}</span></p>
                                 </div>
+                                <div class="d-flex flex-row justify-content-center align-items-center mb-5 gap-3">
+                                    <a href="/ofertas/${producto.nombre}" class="btn btn-outline-primary btn-lg"> Ver más</a>
+                                    <button class="btn btn-danger btn-lg" type="button" onclick="eliminarProducto('${producto.nombre}')">Eliminar</button>
+                                </div>
                             </div>
                         </div>
                      </div>
         `
     })
     
+}
+
+function eliminarProducto(nombre) {
+    const xhr = new XMLHttpRequest();
+
+    xhr.open("PUT", "/ofertas", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onload = () => { 
+        if (xhr.status === 200) {
+            alert("El producto se ha eliminado correctamente");
+            cargarProductos();
+        } else {
+            console.log("Error a la hora de eliminar el producto");
+        }
+    }
+
+    xhr.onerror = () =>{
+        console.log("Error  ");
+    }
+
+    xhr.send(JSON.stringify({nombre:nombre}));
 }

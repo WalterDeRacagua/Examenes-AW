@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Oferta <%= producto.nombre %>
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container p-2">
+        <div class="card shadow">
+            <div class="card-body card-general p-3">
+                <h1 class="card-title text-center text-primary">
+                    Ofertas del producto <span class="fw-bold">
+                        <%= producto.nombre %>
+                    </span>
+                </h1>
+                <div class="d-flex flex-column justify-content-center align-items-center gap-3">
+                    <img src="/img/<%= producto.imagen %>" alt="Imagen del producto <%= producto.nombre %>">
+                    <h2 class="text-center fw-bold">
+                        <%= producto.nombre %>
+                    </h2>
+                </div>
+                <div class="d-flex flex-column justify-content-start align-items-center p-2 gap-3">
+                    <p>Precio: <span class="fw-bold">
+                            <%= producto.precio %>
+                        </span></p>
+                </div>
+                <div class="d-flex flex-row justify-content-center align-items-center gap-3">
+                    <a href="/ofertas" class="btn btn-outline-primary btn-lg"> Regresar a ofertas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ajaxProductos.js"></script>
+
+</body>
+
+</html>
