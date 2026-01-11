@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Información contacto</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container p-3">
+        <!-- Cargamos aquí con Ajax la info concreta del contrato -->
+        <%if(error) {%>
+            <div
+                class="alert alert-danger alert-dismissible fade show d-flex flex-row justify-content-between align-items-center">
+                <h2 class="fw-bold">Error: <%= error %>
+                </h2>
+                <button class="btn btn-close btn-lg" data-bs-dismiss="alert" type="button"></button>
+            </div>
+            <%} else {%>
+                <% if(usuario) {%>
+                    <!-- información de un contacto concreto -->
+                    <div class="card shadow">
+                        <div class="card-body p-3">
+                            <h1 class="card-title text-center p-3">Contacto: <%= usuario.id %>
+                            </h1>
+                        </div>
+                        <div class="d-flex flex-column justify-content-start align-items-start p-3">
+                            <p class="text-start"> <span class="fw-bold">Nombre: </span>
+                                <%= usuario.nombre %>
+                            </p>
+                            <% if(usuario.telefonos.movil){ %>
+                                <p class="text-start"> <span class="fw-bold">Telefono movil: </span>
+                                    <%= usuario.telefonos.movil %>
+                                </p>
+                                <% }%>
+
+                                    <% if(usuario.telefonos.casa){ %>
+                                        <p class="text-start"> <span class="fw-bold">Telefono casa: </span>
+                                            <%= usuario.telefonos.casa %>
+                                        </p>
+
+                                        <% }%>
+
+                                            <% if(usuario.telefonos.oficina){ %>
+                                                <p class="text-start"> <span class="fw-bold">Telefono oficina: </span>
+                                                    <%= usuario.telefonos.oficina %>
+                                                </p>
+
+                                                <% }%>
+
+
+                        </div>
+                        <div class="d-flex flex-row justify-content-center align-items-center m-3">
+                            <a href="/contactos" class="btn btn-outline-primary btn-lg" role="button">Volver</a>
+                        </div>
+                    </div>
+
+
+                    <% } else {%>
+                        <h2 class="text-danger text-center"> No existe información de dicho contacto</h2>
+                        <% } %>
+
+
+                            <%} %>
+
+
+
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ajaxUsuarios.js"></script>
+
+</body>
+
+</html>

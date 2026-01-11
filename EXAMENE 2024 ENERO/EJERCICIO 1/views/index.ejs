@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web Universidad Complutense</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header class="mb-5">
+        <!-- Header complutense -->
+        <div class="encabezado d-flex flex-row justify-content-between align-items-center">
+            <img src="/img/noUser.png" alt="Imagen de la Universidad Complutense de Madrid" class="p-3">
+            <h1 class="text-center fw-bold"> Universidad Complutense de Madrid</h1>
+            <button type="button" class="btn btn-primary btn-lg" data-bs-target="#modalConfiguracion"
+                data-bs-toggle="modal"> Abrir configuración </button>
+        </div>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg p-3 barra-navegacion">
+            <div class="container-fluid">
+                <ul class="navbar-nav me-auto justify-content-center gap-3">
+                    <li class="nav-item">
+                        <a href="" class="nav-link link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link link">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link link">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="seccion seccion-1 p-3 m-2">
+            <h2 class="titulo-seccion">Seccion 1</h2>
+            <p class="texto-seccion">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et quae facilis veritatis expedita ab? Totam,
+                sapiente sed cupiditate quis sequi explicabo sit reprehenderit ex enim? Odit repellendus doloribus eos
+                libero similique quas ducimus nihil fugit et veritatis dolor quibusdam, delectus minima repudiandae
+                atque ex eius earum quae amet natus quod.
+            </p>
+        </section>
+        <section class="seccion seccion-2 p-3 m-2">
+            <h2 class="titulo-seccion">Seccion 2</h2>
+            <p class="texto-seccion">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et quae facilis veritatis expedita ab? Totam,
+                sapiente sed cupiditate quis sequi explicabo sit reprehenderit ex enim? Odit repellendus doloribus eos
+                libero similique quas ducimus nihil fugit et veritatis dolor quibusdam, delectus minima repudiandae
+                atque ex eius earum quae amet natus quod.
+            </p>
+        </section>
+    </main>
+    <footer class="pie-pagina d-flex flex-row justify-content-between align-items-center mt-5">
+        <div class="d-flex flex-column justify-content-start align-items-center p-3">
+            <a href="" class="nav-link link">Inicio</a>
+            <a href="" class="nav-link link">Acerca de</a>
+            <a href="" class="nav-link link">Contacto</a>
+        </div>
+        <img src="/img/noUser.png" alt="Imagen de la universidad complutense de Madrid" class="p-3">
+    </footer>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
+<div class="modal fade" id="modalConfiguracion">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary d-flex flex-row justify-content-between align-items-center">
+                <h2 class="text-start text-white"> Modal de configuración </h2>
+                <button type="button" class="btn btn-close btn-close-white btn-lg" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row mb-2">
+                    <div class="col-6">
+                        <label for="tamTitulos" class="form-label fw-bold">Tamaño de títulos</label>
+                        <select name="tamTitulos" id="tamTitulos" class="form-control">
+                            <option value="pequeno">Pequeño</option>
+                            <option value="mediano">Mediano</option>
+                            <option value="grande">Grande</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="colorTitulos" class="form-label fw-bold">Color títulos</label>
+                        <select name="colorTitulos" id="colorTitulos" class="form-control">
+                            <option value="blanco">Blanco</option>
+                            <option value="negro">Negro</option>
+                            <option value="azul">Azul</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-6">
+                        <label for="colorSecciones" class="form-label fw-bold">Color secciones</label>
+                        <select name="colorSecciones" id="colorSecciones" class="form-control">
+                            <option value="blanco">Blanco</option>
+                            <option value="gris">Gris</option>
+                            <option value="azul">Azul</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="colorSeccion1" class="form-label fw-bold">Color sección 1</label>
+                        <select name="colorSeccion1" id="colorSeccion1" class="form-control">
+                            <option value="blanco">Blanco</option>
+                            <option value="gris">Gris</option>
+                            <option value="azul">Azul</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-6">
+                        <label for="colorFooter" class="form-label fw-bold">Color footer</label>
+                        <select name="colorFooter" id="colorFooter" class="form-control">
+                            <option value="blanco">Blanco</option>
+                            <option value="negro">Negro</option>
+                            <option value="azul">Azul</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="colorEnlaces" class="form-label fw-bold">Color enlaces</label>
+                        <select name="colorEnlaces" id="colorEnlaces" class="form-control">
+                            <option value="blanco">Blanco</option>
+                            <option value="negro">Negro</option>
+                            <option value="azul">Azul</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-6">
+                        <label for="subrayadoEnlaces" class="form-label fw-bold">Subrayado enlaces</label>
+                        <input type="checkbox" class="form-check" id="subrayadoEnlaces" name="subrayadoEnlaces">
+                    </div>
+                    <div class="col-6">
+                        <label for="colorNavbar" class="form-label fw-bold">Color navbar</label>
+                        <select name="colorNavbar" id="colorNavbar" class="form-control">
+                            <option value="blanco">Blanco</option>
+                            <option value="negro">Negro</option>
+                            <option value="azul">Azul</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="d-flex flex-row justify-content-end align-items-center gap-3">
+                    <button type="button" class="btn btn-primary btn-lg" id="aplicarConfiguracion"> Aplicar
+                        configuración </button>
+                    <button type="button" class="btn btn-outline-primary btn-lg" id="restablecerConfiguracion">
+                        Restablecer configuración </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
