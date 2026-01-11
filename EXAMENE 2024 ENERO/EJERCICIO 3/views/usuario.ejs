@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Usuario: <%= usuario.nombre %>
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container p-3">
+        <div class="card shadow">
+            <div class="card-body p-3">
+                <h1 class="card-title fw-bold text-center"> Información de <%= usuario.nombre %>
+                        <%= usuario.apellidos %>
+                </h1>
+                <div class="d-flex flex-column justify-content-center align-items-center gap-3">
+                    <img src="/uploads/<%= usuario.foto %>" alt="Imagen del usuario <%= usuario.nombre %>">
+                    <h2 class="text-center fw-bold"></h2>
+                </div>
+                <div class="d-flex flex-column justify-content-start align-items-start p-2 gap-2">
+                    <p class="text-start"> <span class="fw-bold"> Correo: </span> <%= usuario.correo%></p>
+                </div>
+                <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                    <a href="/usuarios" class="btn btn-outline-primary btn-lg" role="button"> Regresar</a>
+                    <button type="button" onclick="eliminarUsuario('<%= usuario.id %>')" class="btn btn-danger btn-lg">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ajaxUsuarios.js"></script>
+</body>
+
+</html>

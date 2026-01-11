@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container p-3">
+        <div class="card shadow">
+            <div class="card-body p-3">
+                <h1 class="card-title fw-bold text-center"> Formulario de registro</h1>
+                <% if(error) { %>
+                    <div class="alert alert-danger alert-dismissible fade show d-flex justify-content-between align-items-center">
+                        <p>Error <%= error%></p>
+                        <button class="btn btn-close btn-large" data-bs-dismiss="alert" type="button"></button>
+                    </div>
+                    <% } %>
+
+                <form action="/registro" method="post" enctype="multipart/form-data">
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <label for="nombre" class="form-label"> Nombre <span class="text-danger"> *</span></label>
+                            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Paquico" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="apellidos" class="form-label"> Apellidos <span class="text-danger">
+                                    *</span></label>
+                            <input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="Ñoqui Lometro" required>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <label for="correo" class="form-label"> Correo <span class="text-danger">
+                                    *</span></label>
+                            <input type="email" class="form-control" name="correo" id="correo" placeholder="algo@ucm.es"
+                                pattern="^[A-Za-z0-9._]+@ucm\.es$" title="Debe tener el dominio @ucm.es" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="password" class="form-label"> Contraseña <span class="text-danger">
+                                    *</span></label>
+                            <input type="password" class="form-control" name="password" id="password"
+                                pattern="^(?=(?:.*\d){2,})(?=(?:.*[A-Z]){2,})(?=(?:.*[a-z]){2,}).{6,}$"
+                                title="La contraseña debe tener al menos dos dígitos, 2 mayúsculas y 2 minúsculas. Y al menos 6 caracteres"
+                                required>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-12">
+                            <label for="foto" class="form-label">Foto <span class="text-muted">(opcional)</span></label>
+                            <input type="file" accept="image/jpeg, image/jpg, image/png" class="form-control"
+                                name="foto" id="foto">
+                            <div class="form-text text-muted">
+                                Esta foto es opcional,se cargará otra imagen por defecto. Los formatos aceptadaos son
+                                png jpeg, y jpg.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ajaxUsuarios.js"></script>
+</body>
+
+</html>
