@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de usuarios</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container p-3">
+        <div class="card shadow galeria">
+            <div class="card-body p-2">
+                <div class="card-title d-flex flex-column justify-content-center align-items-center p-2 gap-2">
+                    <h1 class="card-title text-center fw-bold"> Registro de usuarios en la aplicación </h1>
+                </div>
+                <% if(error){%>
+                    <div
+                        class="alert alert-danger alert-dismissible fade show d-flex flex-row justify-content-between align-items-center gap-2">
+                        <h2 class="fw-bold"> Error: <%= error %>
+                        </h2>
+                    </div>
+                    <% }%>
+
+                        <% if(numUsuarios>0) {%>
+                            <form action="/registro" method="post" enctype="multipart/form-data" class="p-3">
+                                <div class="row mb-2">
+                                    <div class="col-6">
+                                        <label for="nombre" class="form-label">Nombre: <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" id="nombre" name="nombre" class="form-control"
+                                            placeholder="Sergio" required>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="apellidos" class="form-label">Apellidos: <span
+                                                class="text-danger">*</span></label>
+                                        <input type="text" id="apellidos" name="apellidos" class="form-control"
+                                            placeholder="Sánchez Carrasco" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-6">
+                                        <label for="correo" class="form-label">Correo: <span
+                                                class="text-danger">*</span></label>
+                                        <input type="email" id="correo" name="correo" class="form-control"
+                                            placeholder="sergio@ucm.es" pattern="^[A-Za-z0-9._]+@ucm+\.es$"
+                                            title="El correo debe tener el dominio @ucm.es" required>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="password" class="form-label">Contraseña: <span
+                                                class="text-danger">*</span></label>
+                                        <input type="password" id="password" name="password" class="form-control"
+                                            pattern="^(?=(?:.*\d){1,})(?=(?:.*[A-Z]){1,}).{5,}$" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <label for="foto" class="form-label">Foto</label>
+                                    <input type="file" name="foto" id="foto" accept="image/jpeg, image/jpg, image/png">
+                                    <div class="form-text">
+                                        El formato del archivo debe ser una imagen del tipo jpg, jpeg, png.
+                                    </div>
+                                </div>
+
+
+                                <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                                    <button class="btn btn-primary btn-lg" type="submit"> Enviar formulario </button>
+                                    <a href="/usuarios" class="btn btn-outline-primary btn-lg" role="button"> Ver
+                                        usuarios</a>
+                                </div>
+                            </form>
+                            <% } else {%>
+                                <h3 class="fw-bold">No hay usuarios en el sistema</h3>
+                                <p>Puedes cargar usuarios desde un archivo JSON.</p>
+                                <form action="/cargar-json" method="post" enctype="multipart/form-data">
+                                    <div class="row mb-2">
+                                        <label for="usuariosJSON" class="form-label">Selecciona un json</label>
+                                        <input type="file" name="usuariosJSON" id="usuariosJSON" accept=".json">
+                                        <div class="form-text">
+                                            El formato del archivo debe ser un json.
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                                        <button class="btn btn-primary btn-lg" type="submit"> Enviar json
+                                        </button>
+                                    </div>
+                                </form>
+                                <% } %>
+
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+</html>
