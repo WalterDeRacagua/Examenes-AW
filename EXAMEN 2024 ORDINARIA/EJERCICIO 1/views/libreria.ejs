@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Goma Books</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container p-3">
+        <div class="card shadow galeria">
+            <div class="card-body p-2">
+                <div class="card-title d-flex flex-column justify-content-center align-items-center p-2 gap-2">
+                    <h1 class="card-title text-center fw-bold"> Galería de libros ~ Goma Books </h1>
+                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal"
+                        data-bs-target="#modalConfiguracion"> Abrir configuración </button>
+                </div>
+                <% if(libros) {%>
+                    <div class="row g-3" id="cardContainer">
+                        <!-- Primero los cargo por ejs (en el examen solo con ejs pero para practicar el ajax) -->
+                        <% libros.forEach(libro=> { %>
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="card shadow cards">
+                                    <div class="card-body p-3">
+                                        <div class="card-title d-flex flex-column justify-content-center align-items-center gap-2">
+                                            <img src="/img/<%= libro.imagen %>"
+                                                alt="Imagen del libro <%= libro.titulo %>">
+                                            <h2 class="text-center ">
+                                                <%= libro.titulo %>
+                                            </h2>
+                                        </div>
+                                        <!-- Si hubiera más información iría aquí. -->
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
+                    </div>
+                    <% } else {%>
+                        <h2 class="text-center text-danger"> No hay libros ahora mismo en Goma Books! Disculpa las
+                            molestías</h2>
+                        <% } %>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalConfiguracion">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary d-flex flex-row justify-content-between align-items-center">
+                    <h2 class="text-white"> Modal de configuración </h2>
+                    <button type="button" class="btn btn-close btn-close-white btn-lg" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-2">
+                        <!-- Tamaño imágenes -->
+                        <div class="col-6">
+                            <label for="tamImg" class="form-label">Tamaño de imágenes</label>
+                            <select name="tamImg" id="tamImg" class="form-control">
+                                <option value="pequeno">Pequeño</option>
+                                <option value="mediano" selected>Mediano</option>
+                                <option value="grande">Grande</option>
+                            </select>
+                        </div>
+                        <!-- Tamaño títulos -->
+                        <div class="col-6">
+                            <label for="tamTit" class="form-label">Tamaño de títulos: </label>
+                            <select name="tamTit" id="tamTit" class="form-control">
+                                <option value="pequeno">Pequeño</option>
+                                <option value="mediano">Mediano</option>
+                                <option value="grande">Grande</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <!-- Color galería -->
+                        <div class="col-6">
+                            <label for="colorGaleria" class="form-label">Color galería: </label>
+                            <select name="colorGaleria" id="colorGaleria" class="form-control">
+                                <option value="blanco" >Blanco</option>
+                                <option value="gris">Gris</option>
+                                <option value="azul">Azul</option>
+                            </select>
+                        </div>
+                        <!-- Color texto -->
+                        <div class="col-6">
+                            <label for="colorTexto" class="form-label">Color texto (títulos de la galería): </label>
+                            <select name="colorTexto" id="colorTexto" class="form-control">
+                                <option value="blanco">Blanco</option>
+                                <option value="negro">Negro</option>
+                                <option value="azul">Azul</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex flex-row justify-content-end align-items-center gap-2">
+                    <button type="button" class="btn btn-primary btn-lg" id="aplicarCambios"> Aplicar cambios </button>
+                    <button type="button" class="btn btn-secondary btn-lg" id="restablecerCambios"> Restablecer cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/modal.js"></script>
+</body>
+
+
+</html>
