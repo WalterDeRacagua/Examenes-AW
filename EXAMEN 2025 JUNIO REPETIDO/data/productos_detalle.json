@@ -1,0 +1,148 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "Aceite de Oliva Virgen Extra",
+            "precio": 5.65,
+            "imagen": "aceite_oliva.jpg",
+            "descripcion": "Aceite de Oliva Virgen Extra elaborado con ingredientes sostenibles y de alta calidad.",
+            "ingredientes": [
+                "Ingrediente 1",
+                "Ingrediente 2",
+                "Ingrediente 3"
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "Bolsa de Algod\u00f3n Org\u00e1nico",
+            "precio": 6.8,
+            "imagen": "bolsa_algodon.jpg",
+            "descripcion": "Bolsa de Algod\u00f3n Org\u00e1nico elaborado con ingredientes sostenibles y de alta calidad.",
+            "ingredientes": [
+                "Extracto natural",
+                "Aceite esencial",
+                "Compuesto vegetal"
+            ]
+        },
+        {
+            "id": 3,
+            "nombre": "Cepillo de Bamb\u00fa",
+            "precio": 7.95,
+            "imagen": "cepillo_bambu.jpg",
+            "descripcion": "Cepillo de Bamb\u00fa elaborado con ingredientes sostenibles y de alta calidad.",
+            "ingredientes": [
+                "Ingrediente A",
+                "Ingrediente B",
+                "Ingrediente C"
+            ]
+        },
+        {
+            "id": 4,
+            "nombre": "Champ\u00fa S\u00f3lido de Coco",
+            "precio": 9.1,
+            "imagen": "champu_coco.jpg",
+            "descripcion": "Champ\u00fa S\u00f3lido de Coco elaborado con ingredientes sostenibles y de alta calidad.",
+            "ingredientes": [
+                "Ingrediente 1",
+                "Ingrediente 2",
+                "Ingrediente 3"
+            ]
+        },
+        {
+            "id": 5,
+            "nombre": "Crema Hidratante con Aloe Vera",
+            "precio": 10.25,
+            "imagen": "crema_aloe.jpg",
+            "descripcion": "Crema Hidratante con Aloe Vera elaborado con ingredientes sostenibles y de alta calidad.",
+            "ingredientes": [
+                "Extracto natural",
+                "Aceite esencial",
+                "Compuesto vegetal"
+            ]
+        },
+        {
+            "id": 6,
+            "nombre": "Desodorante Natural sin Aluminio",
+            "precio": 11.4,
+            "imagen": "desodorante.jpg",
+            "descripcion": "Desodorante Natural sin Aluminio elaborado con ingredientes sostenibles y de alta calidad.",
+            "ingredientes": [
+                "Ingrediente A",
+                "Ingrediente B",
+                "Ingrediente C"
+            ]
+        },
+        {
+            "id": 7,
+            "nombre": "Infusi\u00f3n Digestiva Bio",
+            "precio": 12.55,
+            "imagen": "infusion_digestiva.jpg",
+            "descripcion": "Infusi\u00f3n Digestiva Bio elaborado con ingredientes sostenibles y de alta calidad.",
+            "ingredientes": [
+                "Ingrediente 1",
+                "Ingrediente 2",
+                "Ingrediente 3"
+            ]
+        },
+        {
+            "id": 8,
+            "nombre": "Jab\u00f3n Artesanal de Lavanda",
+            "precio": 13.7,
+            "imagen": "jabon_lavanda.jpg",
+            "descripcion": "Jab\u00f3n Artesanal de Lavanda elaborado con ingredientes sostenibles y de alta calidad.",
+            "ingredientes": [
+                "Extracto natural",
+                "Aceite esencial",
+                "Compuesto vegetal"
+            ]
+        },
+        {
+            "id": 9,
+            "nombre": "Limpiador Facial de \u00c1rbol de T\u00e9",
+            "precio": 14.85,
+            "imagen": "limpiador_facial.jpg",
+            "descripcion": "Limpiador Facial de \u00c1rbol de T\u00e9 elaborado con ingredientes sostenibles y de alta calidad.",
+            "ingredientes": [
+                "Ingrediente A",
+                "Ingrediente B",
+                "Ingrediente C"
+            ]
+        },
+        {
+            "id": 10,
+            "nombre": "Miel Ecol\u00f3gica de Romero",
+            "precio": 16.0,
+            "imagen": "miel_romero.jpg",
+            "descripcion": "Miel Ecol\u00f3gica de Romero elaborado con ingredientes sostenibles y de alta calidad.",
+            "ingredientes": [
+                "Ingrediente 1",
+                "Ingrediente 2",
+                "Ingrediente 3"
+            ]
+        },
+        {
+            "id": 11,
+            "nombre": "Pasta Dental Natural con Menta",
+            "precio": 17.15,
+            "imagen": "pasta_dental.jpg",
+            "descripcion": "Pasta Dental Natural con Menta elaborado con ingredientes sostenibles y de alta calidad.",
+            "ingredientes": [
+                "Extracto natural",
+                "Aceite esencial",
+                "Compuesto vegetal"
+            ]
+        },
+        {
+            "id": 12,
+            "nombre": "T\u00e9 Verde Matcha Org\u00e1nico",
+            "precio": 18.3,
+            "imagen": "te_matcha.jpg",
+            "descripcion": "T\u00e9 Verde Matcha Org\u00e1nico elaborado con ingredientes sostenibles y de alta calidad.",
+            "ingredientes": [
+                "Ingrediente A",
+                "Ingrediente B",
+                "Ingrediente C"
+            ]
+        }
+    ]
+}

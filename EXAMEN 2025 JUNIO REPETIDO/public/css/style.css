@@ -1,0 +1,63 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+h1 {
+    color: #2e7d32;
+}
+a {
+    text-decoration: none;
+    color: #1b5e20;
+}
+
+.encabezado-negro {
+    color: black;
+}
+.encabezado-verde {
+    color: #1b5e20;
+}
+.encabezado-azul {
+    color: blue;
+}
+
+.nav-negro {
+    background-color: black !important;
+}
+
+.nav-verde {
+    background-color: #1b5e20 !important;
+}
+
+.nav-blanco {
+    background-color: #fff !important;
+}
+
+.link-azul {
+    color: blue !important;
+}
+
+.link-rojo {
+    color: red !important;
+}
+
+.link-amarillo {
+    color: yellow !important;
+}
+
+.imagen-encabezado {
+    object-fit: cover;
+    border-radius: 30%;
+    height: 120px;
+}
+
+.imagen-cards {
+    border-radius: 25%;
+    object-fit: cover;
+    height: 100px;
+}
+
+.card-productos{
+    min-height: 350px;
+}

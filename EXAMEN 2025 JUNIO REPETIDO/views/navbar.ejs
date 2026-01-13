@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg barra-navegacion" id="navExamen">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="/" class="nav-link"> Indice </a>
+            </li>
+            <li class="nav-item">
+                <a href="/registro" class="nav-link"> Ejercicio 1</a>
+            </li>
+            <li class="nav-item">
+                <a href="/encuesta" class="nav-link"> Ejercicio 2</a>
+            </li>
+            <li class="nav-item">
+                <a href="/productos" class="nav-link"> Ejercicio 3</a>
+            </li>
+            <div class="d-flex flex-row justify-content-center align-items-center gap-3 ms-2">
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                    data-bs-target="#modalConfiguracion"> Configurar</button>
+                    <%if(sesion) {%>
+                        <a href="/registro/logout" class="btn btn-danger btn-sm" role="button"> Cerrar sesión </a>
+                    <% }%>
+
+            </div>
+            
+        </ul>
+    </div>
+</nav>
+<div class="modal fade" id="modalConfiguracion">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary d-flex flex-row justify-content-between align-items-center">
+                <h2 class="text-white"> Modal de configuración general</h2>
+                <button type="button" class="btn btn-close btn-close-white " data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row mb-2">
+                    <div class="col-6">
+                        <label for="colEnc" class="form-label"> Color texto encabezado</label>
+                        <select name="colEnc" id="colEnc" class="form-control">
+                            <option value="negro">Negro</option>
+                            <option value="verde">Verde</option>
+                            <option value="azul">Azul</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="colNav" class="form-label"> Color barra de navegación</label>
+                        <select name="colNav" id="colNav" class="form-control">
+                            <option value="negro">Negro</option>
+                            <option value="verde">Verde</option>
+                            <option value="blanco">Blanco</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-12">
+                        <label for="colLink" class="form-label"> Color links del navbar:</label>
+                        <select name="colLink" id="colLink" class="form-control">
+                            <option value="azul">Azul</option>
+                            <option value="rojo">Rojo</option>
+                            <option value="amarillo">Amarillo</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex flex-row justify-content-end align-items-center gap-3">
+                <button type="button" class="btn btn-primary btn-lg" id="aplicarConfiguracion"> Aplicar </button>
+                <button type="button" class="btn btn-outline-secondary btn-lg" id="restaurarConfiguracion"> Restaurar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
